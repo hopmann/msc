@@ -1,0 +1,62 @@
+<!--
+
+    Copyright (C) 2014 Holger Hopmann (h.hopmann@uni-muenster.de)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<ui:composition template="/WEB-INF/templates/default.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:hopmann="http://java.sun.com/jsf/composite/component">
+
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:viewParam name="package"
+				value="#{packageController.currentPackage}"
+				converter="#{packageConverter}" />
+		</f:metadata>
+	</ui:define>
+
+	<ui:define name="pagetitle">Package</ui:define>
+
+	<ui:define name="content">
+
+		<h1>1. Locate Package</h1>
+
+		<h:outputText value="#{repositoryService.cranRepository}"></h:outputText>
+
+
+		<div class="row">
+			<div class="col-md-6"><b></b></div>
+			<div class="col-md-6">.col-md-6</div>
+		</div>
+
+		<h:form>
+			<div class="panel panel-default">
+
+				<div class="panel-heading">
+					<h3 class="panel-title">Test</h3>
+				</div>
+
+				<div class="panel-body">
+					<hopmann:commandLoadingButton value="Test"
+						action="#{memberController.test()}" styleClass="btn btn-primary" />
+				</div>
+			</div>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

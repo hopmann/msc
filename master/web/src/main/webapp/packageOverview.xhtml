@@ -1,0 +1,86 @@
+<!--
+
+    Copyright (C) 2014 Holger Hopmann (h.hopmann@uni-muenster.de)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<ui:composition template="/WEB-INF/templates/default.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:hopmann="http://java.sun.com/jsf/composite/component">
+
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:viewParam name="package"
+				value="#{currentPackageController.currentPackage}"
+				converter="#{packageConverter}" />
+		</f:metadata>
+	</ui:define>
+
+	<ui:define name="pagetitle">Package</ui:define>
+
+	<ui:define name="content">
+
+		<h:panelGroup rendered="#{not packageOverviewController.registered}">
+			<!-- Package not managed -->
+
+			<div class="jumbotron">
+				<div class="container">
+					<h1>
+						Package
+						<code>#{currentPackage.packageName}</code>
+						not found
+					</h1>
+					<p>You can simply add this package or browse further options
+						below.</p>
+					<p>
+						<a class="btn btn-primary btn-lg">Add Package</a>
+					</p>
+				</div>
+			</div>
+		</h:panelGroup>
+
+		<h:panelGroup rendered="#{packageOverviewController.registered}">
+
+			<!-- Package found -->
+
+			<h1>#{currentPackage.packageName}</h1>
+
+
+			<ui:repeat var="packageSource"
+				value="#{packageOverviewController.allPackageSources}">
+
+
+
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							Package Context <b>#{packageSource.repository.name}</b>
+						</h3>
+					</div>
+
+					<div class="panel-body">
+						<hopmann:packageCheckView packageSource="#{packageSource}"></hopmann:packageCheckView>
+					</div>
+				</div>
+
+			</ui:repeat>
+
+		</h:panelGroup>
+
+	</ui:define>
+</ui:composition>

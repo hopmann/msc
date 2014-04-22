@@ -1,0 +1,54 @@
+<!--
+
+    Copyright (C) 2014 Holger Hopmann (h.hopmann@uni-muenster.de)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<ui:composition template="/WEB-INF/templates/default.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:hopmann="http://java.sun.com/jsf/composite/component">
+
+	<ui:define name="pagetitle">Package Contexts</ui:define>
+
+	<ui:define name="content">
+
+		<h1>All Managed Package Contexts</h1>
+
+		<h:form>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h:dataTable value="#{contextsController.allContexts}" var="c"
+						styleClass="table" headerClass="" rowClasses="">
+
+						<h:column>
+							<f:facet name="header">Context Name</f:facet>
+
+							<h:link outcome="contextOverview" value="#{c.name}">
+								<f:param name="contextId" value="#{c.id}" />
+							</h:link>
+
+						</h:column>
+
+					</h:dataTable>
+				</div>
+
+
+			</div>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

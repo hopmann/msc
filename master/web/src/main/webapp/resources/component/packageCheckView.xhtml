@@ -1,0 +1,71 @@
+<!--
+
+    Copyright (C) 2014 Holger Hopmann (h.hopmann@uni-muenster.de)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:hopmann="http://java.sun.com/jsf/composite/component">
+
+<composite:interface componentType="packageCheckComponent">
+	<composite:attribute name="packageSource" />
+	<composite:attribute name="styleClass" />
+	<composite:attribute name="maxPreviousInstallations"
+		type="java.lang.Integer" />
+
+</composite:interface>
+
+<composite:implementation>
+
+	<div class="table-responsive #{cc.attrs.styleClass}">
+		<table class="table">
+
+			<thead>
+				<tr>
+					<th>Package Name</th>
+					<ui:repeat var="col" value="#{cc.installationTable.columns}">
+						<th>#{col.value}</th>
+					</ui:repeat>
+				</tr>
+			</thead>
+
+			<tbody>
+				<ui:repeat var="row" value="#{cc.installationTable.rows}">
+					<!-- Rows -->
+					<tr>
+						<td>#{row.rowValue.packageName}</td>
+
+						<ui:repeat var="cell" value="#{row.cells}">
+							<!-- Cells -->
+							<td><h:panelGroup rendered="#{not empty cell}">
+									<hopmann:installationView value="#{cell}">
+
+									</hopmann:installationView>
+								</h:panelGroup></td>
+						</ui:repeat>
+					</tr>
+
+				</ui:repeat>
+			</tbody>
+		</table>
+	</div>
+	
+</composite:implementation>
+</html>
+

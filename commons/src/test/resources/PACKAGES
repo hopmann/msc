@@ -1,0 +1,30 @@
+Package: Aspell
+Version: 0.2-0
+Depends: methods
+License: GPL
+NeedsCompilation: yes
+MD5sum: 92f9e6deb40b9b11475bbaaa7f6bf904
+Test: 1, 2, 3
+
+Package: CGIwithR
+Version: 0.73-0
+Suggests: GDD
+License: GPL (>= 2)
+NeedsCompilation: no
+MD5sum: 50b1f48209c9e66909c7afb3a4b8af5e
+
+Package: CodeDepends
+Version: 0.2-1
+Depends: methods
+Imports: codetools, XML
+Suggests: graph, Rgraphviz
+License: GPL
+NeedsCompilation: no
+MD5sum: e2ec3505f9db1a96919a72f07673a2d8
+
+Package: Combinations
+Version: 0.2-1
+Depends: methods
+License: BSD
+NeedsCompilation: yes
+MD5sum: 035c0b4c8943dfbfe86259f63ac3b460

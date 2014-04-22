@@ -1,0 +1,77 @@
+<!--
+
+    Copyright (C) 2014 Holger Hopmann (h.hopmann@uni-muenster.de)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="installationViewComponent">
+	<composite:attribute name="value"
+		type="de.hopmann.msc.master.ejb.entity.PackageResult" />
+
+
+</composite:interface>
+
+<composite:implementation>
+
+	<ui:param name="packageResult" value="#{cc.attrs.value}" />
+	<ui:param name="installationType"
+		value="#{packageResult.installationType}" />
+
+	<div
+		class="installation installation-#{cc.installationStatus.styleType}">
+
+		<table style="width: 100%">
+
+			<tr>
+				<td style="padding-right: 10px" valign="top"><b>#{installationType}</b></td>
+
+				<td align="right" valign="top"><b>V#{packageResult.sourceVersion}@R#{packageResult.revision}
+				</b><br /> <h:panelGroup rendered="#{installationType == 'CHECK'}">
+						<!-- Result is a Check -->
+						<ui:param name="checkResult" value="#{packageResult.checkResult}" />
+
+						<h:panelGroup rendered="#{checkResult.checkErrorCount>0}">
+						#{checkResult.checkErrorCount} Errors<br />
+						</h:panelGroup>
+						<h:panelGroup rendered="#{checkResult.checkWarningCount>0}">
+						#{checkResult.checkWarningCount} Warnings<br />
+						</h:panelGroup>
+						<h:panelGroup rendered="#{checkResult.checkNoteCount>0}">
+						#{checkResult.checkNoteCount} Notes<br />
+						</h:panelGroup>
+						<h:panelGroup rendered="#{checkResult.checkSkippedCount>0}">
+						#{checkResult.checkSkippedCount} Skipped<br />
+						</h:panelGroup>
+					</h:panelGroup></td>
+			</tr>
+		</table>
+
+		<p>
+			#{packageResult.sourceType}<br />
+			<h:outputText rendered="#{not empty packageResult.sourceLocation}"
+				value="(#{packageResult.sourceLocation})" />
+		</p>
+	</div>
+
+</composite:implementation>
+</html>
+

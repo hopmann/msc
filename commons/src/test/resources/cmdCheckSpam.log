@@ -1,0 +1,109 @@
+* using log directory 'C:/Users/Pfogel/Desktop/RTest/work/4/spam.Rcheck'
+* using R version 3.0.2 (2013-09-25)
+* using platform: i386-w64-mingw32 (32-bit)
+* using session charset: ISO8859-1
+* using option '--no-build-vignettes'
+* checking for file 'spam/DESCRIPTION' ... OK
+* this is package 'spam' version '0.41-0'
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking whether package 'spam' can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking R files for non-ASCII characters ... OK
+* checking R files for syntax errors ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking dependencies in R code ... OK
+* checking S3 generic/method consistency ... OK
+* checking replacement functions ... OK
+* checking foreign function calls ... OK
+* checking R code for possible problems ... OK
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd cross-references ... NOTE
+Package unavailable to check Rd xrefs: 'magic'
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... OK
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
+* checking contents of 'data' directory ... OK
+* checking data for non-ASCII characters ... OK
+* checking data for ASCII and uncompressed saves ... OK
+* checking line endings in C/C++/Fortran sources/headers ... OK
+* checking line endings in Makefiles ... OK
+* checking for portable use of $(BLAS_LIBS) and $(LAPACK_LIBS) ... OK
+* checking compiled code ... NOTE
+Note: information on .o files for i386 is not available
+File 'C:/Users/Pfogel/Desktop/RTest/lib/70904/spam/libs/i386/spam.dll':
+  Found 'abort', possibly from 'abort' (C), 'runtime' (Fortran)
+
+Compiled code should not call entry points which might terminate R nor
+write to stdout/stderr instead of to the console.  The detected symbols
+are linked into the code but might come from libraries and not actually
+be called.
+
+See 'Writing portable packages' in the 'Writing R Extensions' manual.
+* checking examples ... OK
+* checking for unstated dependencies in tests ... OK
+* checking tests ... OK
+  Running 'covmat.R'
+  Comparing 'covmat.Rout' to 'covmat.Rout.save' ... OK
+  Running 'demo_article-jss-example1.R'
+  Comparing 'demo_article-jss-example1.Rout' to 'demo_article-jss-example1.Rout.save' ... OK
+  Running 'demo_article-jss-example2.R'
+  Comparing 'demo_article-jss-example2.Rout' to 'demo_article-jss-example2.Rout.save' ... OK
+  Running 'demo_article-jss.R'
+  Comparing 'demo_article-jss.Rout' to 'demo_article-jss.Rout.save' ... OK
+  Running 'demo_cholesky.R'
+  Comparing 'demo_cholesky.Rout' to 'demo_cholesky.Rout.save' ... OK
+  Running 'demo_spam.R'
+  Comparing 'demo_spam.Rout' to 'demo_spam.Rout.save' ... OK
+  Running 'demo_timing.R'
+  Comparing 'demo_timing.Rout' to 'demo_timing.Rout.save' ... OK
+  Running 'diff.R'
+  Comparing 'diff.Rout' to 'diff.Rout.save' ... OK
+  Running 'displays.R'
+  Comparing 'displays.Rout' to 'displays.Rout.save' ... OK
+  Running 'dist.R'
+  Comparing 'dist.Rout' to 'dist.Rout.save' ... OK
+  Running 'foreign.R'
+  Comparing 'foreign.Rout' to 'foreign.Rout.save' ... OK
+  Running 'helper.R'
+  Comparing 'helper.Rout' to 'helper.Rout.save' ... OK
+  Running 'kronecker.R'
+  Comparing 'kronecker.Rout' to 'kronecker.Rout.save' ... OK
+  Running 'mle.R'
+  Comparing 'mle.Rout' to 'mle.Rout.save' ... OK
+  Running 'norm.R'
+  Comparing 'norm.Rout' to 'norm.Rout.save' ... OK
+  Running 'overall.R'
+  Comparing 'overall.Rout' to 'overall.Rout.save' ... OK
+  Running 'permutation.R'
+  Comparing 'permutation.Rout' to 'permutation.Rout.save' ... OK
+  Running 'rowcolstats.R'
+  Comparing 'rowcolstats.Rout' to 'rowcolstats.Rout.save' ... OK
+  Running 'solve.R'
+  Comparing 'solve.Rout' to 'solve.Rout.save' ... OK
+  Running 'spamlist.R'
+  Comparing 'spamlist.Rout' to 'spamlist.Rout.save' ... OK
+  Running 'subsetting.R'
+  Comparing 'subsetting.Rout' to 'subsetting.Rout.save' ... OK
+  Running 'xybind.R'
+  Comparing 'xybind.Rout' to 'xybind.Rout.save' ... OK
+NOTE: There were 2 notes.
